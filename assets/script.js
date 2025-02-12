@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     async function loadQuestions() {
         try {
-            let response = await fetch("/tpq_web/assets/questions.yml");
+            let response = await fetch("/tpq_web/_data/questions.yml");
             if (!response.ok) throw new Error("Failed to load questions.yml");
             let data = await response.text();
             return jsyaml.load(data).questions;
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         let personalityType = urlParams.get("type");
 
         try {
-            let response = await fetch("/tpq_web/assets/personalities.yml");
+            let response = await fetch("/tpq_web/_data/personalities.yml");
             if (!response.ok) throw new Error("Failed to load personalities.yml");
             let data = await response.text();
             let personalities = jsyaml.load(data).personalities;
