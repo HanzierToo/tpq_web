@@ -73,9 +73,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Check if we are on the quiz or results page
     if (window.location.pathname.includes("quiz.md")) {
+        console.log("Quiz Page Detected");
         loadQuestions().then(questions => displayQuestion(questions[currentQuestionIndex]));
         document.getElementById("next-btn").addEventListener("click", nextQuestion);
     } else if (window.location.pathname.includes("results.md")) {
+        console.log("Huh?");
         displayResults();
     }
 });
