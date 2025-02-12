@@ -1,0 +1,9 @@
+personalities:
+  - type: "Introvert"
+    description: "You enjoy solitude and deep thinking."
+  - type: "Extrovert"
+    description: "You thrive in social settings and love interacting with others."
+  - type: "Thinker"
+    description: "You analyze situations logically and prefer structured thinking."
+  - type: "Feeler"
+    description: "You make decisions based on emotions and empathy."

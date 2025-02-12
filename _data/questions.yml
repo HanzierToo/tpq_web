@@ -1,0 +1,16 @@
+questions:
+  - id: 1
+    text: "How do you spend your free time?"
+    options:
+      - text: "Reading a book"
+        personality: "Introvert"
+      - text: "Going to a party"
+        personality: "Extrovert"
+
+  - id: 2
+    text: "What do you value the most?"
+    options:
+      - text: "Logic and reason"
+        personality: "Thinker"
+      - text: "Feelings and emotions"
+        personality: "Feeler"

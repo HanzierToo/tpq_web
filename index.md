@@ -1,8 +1,12 @@
 ---
 layout: default
-title: "Hello World"
+title: "SchizCo Patented Personality Quiz"
 ---
 
-# Hello World!
+# The SchizCo Tank Personality Quiz!
 
-Testing for GitHub pages.
+We here at SchizCo have listened to your demands, and have now released our newest project for public enjoyment,
+
+## The Tank Personality Quiz!
+
+[Start the Quiz](quiz.html){: .btn}

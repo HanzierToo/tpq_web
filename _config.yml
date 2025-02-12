@@ -1,1 +1,9 @@
+title: "Personality Quiz"
+description: "Lorem Ipsum"
 theme: minima
+
+exclude:
+  - README.md
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
