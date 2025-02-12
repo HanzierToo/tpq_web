@@ -1,83 +1,108 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    let currentQuestionIndex = 0;
-    let answers = [];
-
     console.log("JavaScript Loaded Successfully");
 
+    let quizContainer = document.getElementById("quiz-container");
+    let resultsContainer = document.getElementById("results-container");
+
+    if (quizContainer) {
+        // If the quiz container exists, we're on the quiz page
+        startQuiz();
+    } else if (resultsContainer) {
+        // If the results container exists, we're on the results page
+        displayResults();
+    }
+
     async function loadQuestions() {
-        let response = await fetch("/tpq_web/assets/questions.yml");
-        let data = await response.text();
-        let questions = jsyaml.load(data).questions;
-        return questions;
-    }
-
-    function displayQuestion(question) {
-        document.getElementById("question-title").textContent = question.text;
-        let optionsContainer = document.getElementById("options");
-        optionsContainer.innerHTML = "";
-
-        question.options.forEach(option => {
-            let btn = document.createElement("button");
-            btn.textContent = option.text;
-            btn.classList.add("quiz-option");
-            btn.onclick = function () {
-                answers.push(option.personality);
-                document.getElementById("next-btn").style.display = "block"; // Show Next button
-            };
-            optionsContainer.appendChild(btn);
-        });
-
-        document.getElementById("next-btn").style.display = "none"; // Hide Next until an answer is selected
-    }
-
-    async function nextQuestion() {
-        let questions = await loadQuestions();
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            displayQuestion(questions[currentQuestionIndex]);
-        } else {
-            calculateResults();
+        try {
+            let response = await fetch("/tpq_web/assets/questions.yml");
+            if (!response.ok) throw new Error("Failed to load questions.yml");
+            let data = await response.text();
+            return jsyaml.load(data).questions;
+        } catch (error) {
+            console.error(error);
+            alert("Error loading quiz questions.");
+            return [];
         }
     }
 
-    function calculateResults() {
-        let personalityCounts = {};
-        answers.forEach(answer => {
-            personalityCounts[answer] = (personalityCounts[answer] || 0) + 1;
-        });
+    async function startQuiz() {
+        let currentQuestionIndex = 0;
+        let answers = [];
+        let questions = await loadQuestions();
+        let nextButton = document.getElementById("next-btn");
 
-        let resultType = Object.keys(personalityCounts).reduce((a, b) =>
-            personalityCounts[a] > personalityCounts[b] ? a : b
-        );
+        if (questions.length === 0) {
+            document.getElementById("question-title").textContent = "Error loading questions.";
+            return;
+        }
 
-        window.location.href = `results.md?type=${resultType}`;
+        function displayQuestion(question) {
+            document.getElementById("question-title").textContent = question.text;
+            let optionsContainer = document.getElementById("options");
+            optionsContainer.innerHTML = "";
+
+            question.options.forEach(option => {
+                let btn = document.createElement("button");
+                btn.textContent = option.text;
+                btn.classList.add("quiz-option");
+                btn.onclick = function () {
+                    answers.push(option.personality);
+                    nextButton.style.display = "block";
+                };
+                optionsContainer.appendChild(btn);
+            });
+
+            nextButton.style.display = "none";
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(questions[currentQuestionIndex]);
+            } else {
+                calculateResults();
+            }
+        }
+
+        function calculateResults() {
+            let personalityCounts = {};
+            answers.forEach(answer => {
+                personalityCounts[answer] = (personalityCounts[answer] || 0) + 1;
+            });
+
+            let resultType = Object.keys(personalityCounts).reduce((a, b) =>
+                personalityCounts[a] > personalityCounts[b] ? a : b
+            );
+
+            window.location.href = `results.md?type=${resultType}`;
+        }
+
+        nextButton.addEventListener("click", nextQuestion);
+
+        // Start the quiz with the first question
+        displayQuestion(questions[currentQuestionIndex]);
     }
 
     async function displayResults() {
         let urlParams = new URLSearchParams(window.location.search);
         let personalityType = urlParams.get("type");
 
-        let response = await fetch("/tpq_web/assets/personalities.yml");
-        let data = await response.text();
-        let personalities = jsyaml.load(data).personalities;
+        try {
+            let response = await fetch("/tpq_web/assets/personalities.yml");
+            if (!response.ok) throw new Error("Failed to load personalities.yml");
+            let data = await response.text();
+            let personalities = jsyaml.load(data).personalities;
 
-        let personality = personalities.find(p => p.type === personalityType);
-
-        if (personality) {
-            document.getElementById("personality-type").textContent = personality.type;
-            document.getElementById("personality-desc").textContent = personality.description;
-        } else {
-            document.getElementById("results-container").innerHTML = "<h2>Error: Personality not found.</h2>";
+            let personality = personalities.find(p => p.type === personalityType);
+            if (personality) {
+                document.getElementById("personality-type").textContent = personality.type;
+                document.getElementById("personality-desc").textContent = personality.description;
+            } else {
+                document.getElementById("results-container").innerHTML = "<h2>Error: Personality not found.</h2>";
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Error loading personality results.");
         }
-    }
-
-    // Check if we are on the quiz or results page
-    if (window.location.pathname.includes("quiz.md")) {
-        console.log("Quiz Page Detected");
-        loadQuestions().then(questions => displayQuestion(questions[currentQuestionIndex]));
-        document.getElementById("next-btn").addEventListener("click", nextQuestion);
-    } else if (window.location.pathname.includes("results.md")) {
-        console.log("Huh?");
-        displayResults();
     }
 });
