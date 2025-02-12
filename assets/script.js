@@ -74,7 +74,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 personalityCounts[a] > personalityCounts[b] ? a : b
             );
 
-            window.location.href = `results.md?type=${resultType}`;
+            // Ensure correct absolute path
+            window.location.href = "/tpq_web/results.md?type=" + encodeURIComponent(resultType);
         }
 
         nextButton.addEventListener("click", nextQuestion);
