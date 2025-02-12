@@ -4,6 +4,7 @@ theme: minima
 
 markdown: kramdown
 permalink: pretty
+header_pages: [""]
 
 minima:
   skin: auto
