@@ -9,4 +9,4 @@ We here at SchizCo have listened to your demands, and have now released our newe
 
 ## The Tank Personality Quiz!
 
-[Start the Quiz](quiz.html){: .btn}
+[Start the Quiz](quiz.md){: .btn}
