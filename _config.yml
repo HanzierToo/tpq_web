@@ -2,6 +2,9 @@ title: "Personality Quiz"
 description: "Lorem Ipsum"
 theme: minima
 
+markdown: kramdown
+permalink: pretty
+
 exclude:
   - README.md
   - node_modules
