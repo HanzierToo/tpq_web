@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             );
 
             // Ensure correct absolute path
-            window.location.href = "/tpq_web/results.md?type=" + encodeURIComponent(resultType);
+            window.location.href = "/tpq_web/results?type=" + encodeURIComponent(resultType);
         }
 
         nextButton.addEventListener("click", nextQuestion);
