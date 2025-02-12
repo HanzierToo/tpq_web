@@ -8,4 +8,4 @@ title: "The Quiz Part"
     <div id="options"></div>
 </div>
 
-<script src="assets/script.js"></script>
+<script src="/tpq_web/assets/script.js"></script>

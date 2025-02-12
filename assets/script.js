@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("JavaScript Loaded Successfully");
 
     async function loadQuestions() {
-        let response = await fetch("assets/questions.yml");
+        let response = await fetch("questions.yml");
         let data = await response.text();
         let questions = jsyaml.load(data).questions;
         return questions;
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let urlParams = new URLSearchParams(window.location.search);
         let personalityType = urlParams.get("type");
 
-        let response = await fetch("assets/personalities.yml");
+        let response = await fetch("personalities.yml");
         let data = await response.text();
         let personalities = jsyaml.load(data).personalities;
 
