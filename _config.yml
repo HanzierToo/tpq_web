@@ -5,6 +5,14 @@ theme: minima
 markdown: kramdown
 permalink: pretty
 
+minima:
+  skin: auto
+  social_links:
+    - platform: github
+      user_url: "https://github.com/hanziertoo"
+
+author: "Hanzier"
+
 exclude:
   - README.md
   - node_modules
