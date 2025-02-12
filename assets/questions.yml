@@ -8,7 +8,7 @@ questions:
         personality: "Fake Socialite"
       - text: "Take the time off for yourself and just chill."
         personality: "Forever A Loner"
-      - text: "Neither of these"
+      - text: "None of these."
         personality: "Social Outcast"
 
   - id: 2
