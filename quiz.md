@@ -4,7 +4,7 @@ title: "The Quiz Part"
 ---
 
 <div id="quiz-container">
-    <h2 id="question-title">Loading...</h2>
+    <h2 id="question-title">Loading... THE VOICES THE VOICES THE VOICES</h2>
     <div id="options"></div>
     <button id="next-btn" style="display: none;">Next</button>
 </div>

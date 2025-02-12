@@ -1,16 +1,60 @@
 questions:
   - id: 1
-    text: "How do you spend your free time?"
+    text: "Suddenly you've got some free time on your hands. What do you do?"
     options:
-      - text: "Reading a book"
-        personality: "Introvert"
-      - text: "Going to a party"
-        personality: "Extrovert"
+      - text: "Go get my favorite book and tuck in for some reading."
+        personality: "Intellectual Snob"
+      - text: "Hop on a call and talk with some friends whilst playing a game or just hanging out."
+        personality: "Fake Socialite"
+      - text: "Take the time off for yourself and just chill."
+        personality: "Forever A Loner"
+      - text: "Neither of these"
+        personality: "Social Outcast"
 
   - id: 2
-    text: "What do you value the most?"
+    text: "In the middle of your free time activity, a shadowy figure appears in the room with you. He beckons you to get closer. What do you do?"
     options:
-      - text: "Logic and reason"
-        personality: "Thinker"
-      - text: "Feelings and emotions"
-        personality: "Feeler"
+      - text: "Fucking RUN, I ain't touching that thing!"
+        personality: "Forever A Loner"
+      - text: "I'm not scared of you, I'll fight you!"
+        personality: "Fake Socialite"
+      - text: "I'll try to talk to it and see what it wants."
+        personality: "Intellectual Snob"
+      - text: "Make vigorous love to its shadowy tendrils and become one with the darkness, if you know what I mean ( ͡° ͜ʖ ͡°)."
+        personality: "Social Outcast"
+
+  - id: 3
+    text: "Before you can make that decision, the shadowy figure approaches you instead, slowly lumbering up to you, freezing you in place. It stops and asks you what you think the meaning of life is. What do you say?"
+    options:
+      - text: "I don't know, I haven't really thought about it I guess. Why are you in my house? How did you get in?"
+        personality: "Forever A Loner"
+      - text: "The meaning of life is to live to the fullest, to experience everything you can and to be happy. We as humans are meant to enjoy life and to make the most of it."
+        personality: "Intellectual Snob"
+      - text: "Take me now you freaky Slenderman looking-ass fuck."
+        personality: "Social Outcast"
+      - text: "The meaning of life is to find love and to be loved. It's the only thing that truly matters in the end. Without others, life would be bland and lonely."
+        personality: "Fake Socialite"
+
+  - id: 4
+    text: "The shadowy figure takes a second to ponder your answer. Afterwards, its nods approvingly and leaves. Relieved and somewhat disappointed, you look at the clock and realize it's time to head back to work! You grab your essential (keys, phone, etc.) and bolt to the door, but before doing so, you rush to grab one last thing. What do you grab?"
+    options:
+      - text: "Some snacks and treats for your co-workers. It's Greg's birthday today!"
+        personality: "Fake Socialite"
+      - text: "Your obnoxiously RGB PC setup, including several widescreen monitors. The work laptops suck!"
+        personality: "Social Outcast"
+      - text: "Your notebook and some notes for meetings and work ideas. Can't be too prepared!"
+        personality: "Intellectual Snob"
+      - text: "A handheld console. Work is deathly boring."
+        personality: "Forever A Loner"
+
+  - id: 5
+    text: "Luckily, you arrive to work with seconds to spare. You sit down at your desk and start your workday. What's the first thing you do?"
+    options:
+      - text: "Check the calendar and see what meetings you have today. You're always prepared for them!"
+        personality: "Intellectual Snob"
+      - text: "Hide in the bathroom for a bit and play some games on your phone. You're not ready for the day yet."
+        personality: "Forever A Loner"
+      - text: "Greet everyone in the office and ask how they're doing. It's important to catch-up with everyone!"
+        personality: "Fake Socialite"
+      - text: "Sit down and start working. You're here to work, not to socialize. In fact, you start snitching to the manager about your other co-workers who don't seem to be working at all. Afterwards, you verbally berate them for not working as hard as you and then make a point about how much better you are than them."
+        personality: "Social Outcast"

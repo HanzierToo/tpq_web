@@ -1,9 +1,9 @@
 personalities:
-  - type: "Introvert"
-    description: "You enjoy solitude and deep thinking."
-  - type: "Extrovert"
-    description: "You thrive in social settings and love interacting with others."
-  - type: "Thinker"
-    description: "You analyze situations logically and prefer structured thinking."
-  - type: "Feeler"
-    description: "You make decisions based on emotions and empathy."
+  - type: "Intellectual Snob"
+    description: "You think you're better than me just cus' you're smarter, huh?"
+  - type: "Fake Socialite"
+    description: 'You like talking to people, but deep down, you''re incredibly insecure about contact with other people. Everyone knows about it, especially your "friends".'
+  - type: "Forever A Loner"
+    description: "Haha meme for the 2010s. You'll never find love."
+  - type: "Social Outcast"
+    description: "I knew you'd end up here. You sicken me. Freak. Fuck out of my site (haha get it, kill me pls)."

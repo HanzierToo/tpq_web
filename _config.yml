@@ -1,5 +1,5 @@
 title: "Personality Quiz"
-description: "Lorem Ipsum"
+description: "© 2024 SchizCo Consulting Group. All rights reserved. All lefts taken."
 theme: minima
 
 markdown: kramdown
@@ -12,7 +12,7 @@ minima:
     - platform: github
       user_url: "https://github.com/hanziertoo"
 
-author: "Hanzier"
+author: "Personality G-8427"
 
 exclude:
   - README.md
